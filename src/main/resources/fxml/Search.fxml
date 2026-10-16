@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.SearchController">
+   <children>
+      <AnchorPane fx:id="aPane" prefHeight="400.0" prefWidth="200.0" />
+      <TextField fx:id="searchTextField" layoutX="299.0" layoutY="53.0" />
+      <TabPane layoutX="204.0" layoutY="111.0" prefHeight="258.0" prefWidth="366.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Username">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ListView fx:id="usernameListView" layoutX="2.0" prefHeight="200.0" prefWidth="366.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Post">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ListView fx:id="postListView" layoutY="-1.0" prefHeight="200.0" prefWidth="366.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Hashtag">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ListView fx:id="hashtagListView" layoutX="-1.0" prefHeight="200.0" prefWidth="366.0" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <Button fx:id="sendButton" layoutX="491.0" layoutY="52.0" mnemonicParsing="false" style="-fx-background-color: #8272f7;" text="Search" />
+   </children>
+</AnchorPane>

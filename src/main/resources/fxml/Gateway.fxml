@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="509.0" prefWidth="660.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.GatewayController">
+   <children>
+      <VBox prefHeight="400.0" prefWidth="299.0">
+         <children>
+            <Label fx:id="loginLabel" text="Login" textFill="#8272f7">
+               <VBox.margin>
+                  <Insets left="125.0" top="20.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="errorText" prefHeight="18.0" prefWidth="262.0" textAlignment="CENTER" textFill="RED">
+               <VBox.margin>
+                  <Insets left="20.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets left="70.0" right="70.0" />
+               </padding>
+            </Label>
+            <TextField fx:id="userTextField1" prefHeight="34.0" prefWidth="238.0" promptText="Username or Email">
+               <VBox.margin>
+                  <Insets left="30.0" right="30.0" top="20.0" />
+               </VBox.margin>
+            </TextField>
+            <PasswordField fx:id="passTextField1" prefHeight="37.0" prefWidth="238.0" promptText="Password">
+               <VBox.margin>
+                  <Insets left="30.0" right="30.0" top="20.0" />
+               </VBox.margin>
+            </PasswordField>
+            <Button fx:id="signInButton" mnemonicParsing="false" onAction="#login" style="-fx-background-color: #8272f7;" text="Sign In" textFill="WHITE">
+               <VBox.margin>
+                  <Insets left="120.0" top="20.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+      <VBox prefHeight="400.0" prefWidth="302.0">
+         <children>
+            <Label fx:id="registerLabel" text="Register" textFill="#8272f7">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="120.0" top="20.0" />
+               </VBox.margin>
+            </Label>
+            <Label fx:id="errorText1" prefHeight="18.0" prefWidth="262.0" textAlignment="CENTER" textFill="RED">
+               <VBox.margin>
+                  <Insets left="25.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets left="70.0" right="70.0" />
+               </padding>
+            </Label>
+            <TextField fx:id="nameTextField" prefHeight="34.0" prefWidth="238.0" promptText="Full Name">
+               <VBox.margin>
+                  <Insets left="30.0" right="30.0" top="20.0" />
+               </VBox.margin>
+            </TextField>
+            <TextField fx:id="userTextField" layoutX="40.0" layoutY="88.0" prefHeight="34.0" prefWidth="238.0" promptText="Username">
+               <VBox.margin>
+                  <Insets left="30.0" right="30.0" top="20.0" />
+               </VBox.margin>
+            </TextField>
+            <TextField fx:id="emailTextField" layoutX="40.0" layoutY="152.0" prefHeight="34.0" prefWidth="238.0" promptText="Email">
+               <VBox.margin>
+                  <Insets left="30.0" right="30.0" top="20.0" />
+               </VBox.margin>
+            </TextField>
+            <TextField fx:id="phoneTextField" layoutX="40.0" layoutY="217.0" prefHeight="34.0" prefWidth="238.0" promptText="Phone">
+               <VBox.margin>
+                  <Insets left="30.0" right="30.0" top="20.0" />
+               </VBox.margin>
+            </TextField>
+            <PasswordField fx:id="passTextField" prefHeight="37.0" prefWidth="238.0" promptText="Password">
+               <VBox.margin>
+                  <Insets left="30.0" right="30.0" top="20.0" />
+               </VBox.margin>
+            </PasswordField>
+            <PasswordField fx:id="confirmPassTextField" layoutX="10.0" layoutY="375.0" prefHeight="37.0" prefWidth="238.0" promptText="Confirm Password">
+               <VBox.margin>
+                  <Insets left="30.0" right="30.0" top="20.0" />
+               </VBox.margin>
+            </PasswordField>
+            <DatePicker fx:id="bday" prefHeight="33.0" prefWidth="242.0" promptText="Birthday Date">
+               <VBox.margin>
+                  <Insets left="30.0" top="20.0" />
+               </VBox.margin>
+            </DatePicker>
+            <Button fx:id="signUpButton" mnemonicParsing="false" onAction="#signUp" style="-fx-background-color: #8272f7;" text="Sign UP" textFill="WHITE">
+               <VBox.margin>
+                  <Insets left="120.0" top="20.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+   </children>
+</HBox>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.media.MediaView?>
+
+<AnchorPane prefHeight="700.0" prefWidth="900.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.PostDetailController">
+    <children>
+        <AnchorPane fx:id="sideBarPane" layoutY="1.0" prefHeight="700.0" prefWidth="200.0" style="-fx-background-color: black;">
+         <children>
+             <AnchorPane fx:id="aPane" layoutY="3.0" prefHeight="478.0" prefWidth="200.0"/>
+         </children></AnchorPane>
+
+        <VBox layoutX="220.0" layoutY="20.0" prefWidth="650.0" spacing="15">
+            <children>
+                <VBox fx:id="postContainer" style="-fx-border-color: #8272f7; -fx-background-radius: 10; -fx-background-color: white; -fx-border-radius: 10; -fx-padding: 15;">
+                    <children>
+                        <HBox spacing="10">
+                            <Label fx:id="fullNameLabel" style="-fx-font-weight: bold; -fx-font-size: 14;" />
+                            <Label fx:id="usernameLabel" style="-fx-text-fill: gray; -fx-font-size: 12;" />
+                            <Label fx:id="dateLabel" style="-fx-text-fill: gray; -fx-font-size: 12;" />
+                        </HBox>
+
+                        <Label fx:id="postTextLabel" style="-fx-font-size: 14; -fx-padding: 10 0;" wrapText="true" />
+
+                        <ImageView fx:id="imgView" fitHeight="200.0" fitWidth="300.0" managed="false" pickOnBounds="true" preserveRatio="true" visible="false">
+                            <VBox.margin>
+                                <Insets bottom="10.0" top="10.0" />
+                            </VBox.margin>
+                        </ImageView>
+
+                        <VBox fx:id="videoContainer" managed="false" visible="false">
+                            <children>
+                                <MediaView fx:id="mediaView" fitHeight="300.0" fitWidth="500.0" preserveRatio="true" />
+                                <HBox alignment="CENTER_LEFT" spacing="15" style="-fx-padding: 10 0 0 0;">
+                                    <children>
+                                        <Label style="-fx-background-color: rgba(0,0,0,0.5); -fx-padding: 2 5;" text="Volume:" textFill="WHITE" />
+                                        <Slider fx:id="volumeSlider" max="1" min="0" prefWidth="120.0" value="0.5" />
+                                        <Label fx:id="videoTimeLabel" style="-fx-background-color: rgba(0,0,0,0.5); -fx-padding: 2 5;" text="00:00 / 00:00" textFill="WHITE" />
+                                        <Button fx:id="playPauseBtn" onAction="#togglePlayPause" style="-fx-background-color: #8272f7; -fx-text-fill: white;" text="⏸" />
+                                    </children>
+                                </HBox>
+                            </children>
+                            <VBox.margin>
+                                <Insets bottom="10.0" top="10.0" />
+                            </VBox.margin>
+                        </VBox>
+
+                        <HBox spacing="20" style="-fx-padding: 10 0 0 0;">
+                            <Label fx:id="likesLabel" style="-fx-font-size: 12;" />
+                            <Label fx:id="viewsLabel" style="-fx-font-size: 12;" />
+                        </HBox>
+
+                        <HBox spacing="15" style="-fx-padding: 10 0 0 0;">
+                            <Button fx:id="likeButton" onAction="#onLikeClick" style="-fx-background-color: #8272f7; -fx-text-fill: white;" text="♡ Like" />
+                            <Button fx:id="replyButton" onAction="#onReplyAction" style="-fx-background-color: #8272f7; -fx-text-fill: white;" text=" Reply" />
+                            <Button fx:id="shareButton" onAction="#onShareClick" style="-fx-background-color: #8272f7; -fx-text-fill: white;" text=" Share" />
+                            <Button fx:id="reportBtn" mnemonicParsing="false" onAction="#report" style="-fx-background-color: #8272f7; -fx-text-fill: white;" text="⚠ Report" />
+                            <Button fx:id="editButton" mnemonicParsing="false" onAction="#edit" style="-fx-background-color: #8272f7; -fx-text-fill: white;" text="✎ Edit" />
+                            <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#delete" style="-fx-background-color: #8272f7; -fx-text-fill: white;" text="🗑 Delete" />
+                        </HBox>
+                    </children>
+                </VBox>
+
+                <VBox style="-fx-border-color: #8272f7; -fx-border-radius: 10; -fx-padding: 15; -fx-background-radius: 10; -fx-background-color: #1a1a1a;">
+                    <children>
+                        <Label style="-fx-font-weight: bold; -fx-padding: 0 0 10 0;" text="✏ Write a reply:" textFill="WHITE" />
+                        <TextArea fx:id="replyTextArea" prefHeight="80.0" style="-fx-background-radius: 5; -fx-border-radius: 5;" wrapText="true" />
+                        <Button alignment="CENTER" maxWidth="100.0" onAction="#postReply" style="-fx-background-color: #8272f7; -fx-text-fill: white; -fx-padding: 8 15;" text="Post Reply">
+                            <VBox.margin>
+                                <Insets top="10.0" />
+                            </VBox.margin>
+                        </Button>
+                    </children>
+                </VBox>
+
+                <Label style="-fx-font-weight: bold; -fx-font-size: 14;" text=" Replies:" textFill="WHITE" />
+                <ListView fx:id="repliesListView" prefHeight="250.0" prefWidth="650.0" style="-fx-background-color: #1a1a1a; -fx-control-inner-background: #1a1a1a;" />
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>
